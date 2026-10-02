@@ -1,0 +1,51 @@
+/* Skybound site: the Neon Night look, kept simple so it reads on anything. */
+:root {
+  color-scheme: dark;
+  --bg-top: #100828;
+  --bg-bottom: #280c46;
+  --text: #e9e6f5;
+  --muted: #a89fc4;
+  --cyan: #00ecff;
+  --pink: #ff2ec4;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--bg-top), var(--bg-bottom)) fixed;
+}
+main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 56px 24px 72px;
+}
+h1 {
+  margin: 0;
+  font-size: 44px;
+  letter-spacing: 0.06em;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 10px var(--cyan), 0 0 28px rgba(0, 236, 255, 0.55);
+}
+.tagline {
+  margin: 4px 0 40px;
+  text-align: center;
+  color: var(--muted);
+}
+.meta { color: var(--muted); font-size: 15px; }
+h2 {
+  margin: 36px 0 8px;
+  font-size: 22px;
+  color: var(--cyan);
+}
+a { color: var(--pink); }
+dt { font-weight: 600; margin-top: 16px; }
+dd { margin: 4px 0 0; color: var(--muted); }
+.footer {
+  margin-top: 56px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 15px;
+}
