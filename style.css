@@ -49,3 +49,39 @@ dd { margin: 4px 0 0; color: var(--muted); }
   color: var(--muted);
   font-size: 15px;
 }
+
+/* Launch page additions. */
+.hero { text-align: center; }
+.icon {
+  display: block;
+  margin: 0 auto 14px;
+  border-radius: 22px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+}
+.store {
+  display: inline-block;
+  margin: 8px 0 10px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  background: var(--cyan);
+  color: #08101e;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 0 18px rgba(0, 236, 255, 0.45);
+}
+.store:hover { background: #fff; }
+.hero .meta { margin: 0; text-align: center; }
+.shots {
+  display: flex;
+  gap: 12px;
+  margin: 36px 0 8px;
+}
+.shots img {
+  flex: 1 1 0;
+  min-width: 0;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.features { padding-left: 20px; }
+.features li { margin: 10px 0; color: var(--muted); }
+.features strong { color: var(--text); }
