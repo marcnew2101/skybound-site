@@ -90,3 +90,45 @@ dd { margin: 4px 0 0; color: var(--muted); }
 .features { padding-left: 20px; }
 .features li { margin: 10px 0; color: var(--muted); }
 .features strong { color: var(--text); }
+
+/* Support form. */
+.support { display: grid; gap: 6px; margin-top: 8px; }
+.support label { margin-top: 10px; font-weight: 600; }
+.support .opt { color: var(--muted); font-weight: 400; font-size: 14px; }
+.support input, .support textarea {
+  width: 100%;
+  padding: 11px 13px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--text);
+  font: inherit;
+}
+.support input:focus, .support textarea:focus {
+  outline: none;
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(0, 236, 255, 0.2);
+}
+.support textarea { resize: vertical; }
+.support button {
+  justify-self: start;
+  margin-top: 14px;
+  padding: 12px 26px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--cyan);
+  color: #08101e;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 0 18px rgba(0, 236, 255, 0.45);
+}
+.support button:hover { background: #fff; }
+.support button:disabled { opacity: 0.6; cursor: default; }
+.gotcha { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.form-note { margin: 12px 0 0; padding: 12px 14px; border-radius: 12px; }
+.form-note:empty { display: none; }
+.form-note[data-fs-success] { display: none; background: rgba(0, 236, 255, 0.12); color: var(--cyan); }
+.form-note.error { background: rgba(255, 46, 196, 0.12); color: var(--pink); }
+.field-error { color: var(--pink); font-size: 14px; }
+.field-error:empty { display: none; }

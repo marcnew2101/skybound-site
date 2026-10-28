@@ -9,7 +9,7 @@
 <meta property="og:description" content="A free one-thumb stacking game for iPhone. Build a tower from the ground into space. No ads, no timers, no gems.">
 <meta property="og:image" content="https://marcnew2101.github.io/skybound-site/shot-day-or-night.png">
 <link rel="icon" href="icon.png?v=2">
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 <main>
@@ -80,12 +80,35 @@
     in Settings.</dd>
   </dl>
 
-  <h2>Support</h2>
-  <p>Questions, bugs, or ideas? Email
-  <a href="mailto:marcnew2101@icloud.com">marcnew2101@icloud.com</a>. Please include your
-  iPhone model and iOS version if you're reporting a problem.</p>
+  <h2 id="contact">Support</h2>
+  <p>Questions, bugs, or ideas? Send a note. If you're reporting a problem, the iPhone model
+  and iOS version help.</p>
+
+  <div class="form-note" data-fs-success>Sent. Thanks, I'll read it soon.</div>
+  <div class="form-note error" data-fs-error></div>
+
+  <form id="support-form" class="support" action="https://formspree.io/f/xljjbqon" method="POST">
+    <input type="hidden" name="_subject" value="Skybound support">
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="gotcha">
+    <label for="sf-name">Name <span class="opt">(optional)</span></label>
+    <input id="sf-name" type="text" name="name" autocomplete="name" data-fs-field>
+    <label for="sf-email">Email <span class="opt">(so I can reply)</span></label>
+    <input id="sf-email" type="email" name="email" autocomplete="email" required data-fs-field>
+    <span class="field-error" data-fs-error="email"></span>
+    <label for="sf-device">iPhone and iOS version <span class="opt">(optional)</span></label>
+    <input id="sf-device" type="text" name="device" placeholder="iPhone 17, iOS 27.1" data-fs-field>
+    <label for="sf-message">Message</label>
+    <textarea id="sf-message" name="message" rows="5" required data-fs-field></textarea>
+    <span class="field-error" data-fs-error="message"></span>
+    <button type="submit" data-fs-submit-btn>Send</button>
+  </form>
 
   <p class="footer"><a href="privacy.html">Privacy Policy</a> · © 2026 Marc Newhard</p>
 </main>
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#support-form', formId: 'xljjbqon' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
