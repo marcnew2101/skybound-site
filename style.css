@@ -1,12 +1,14 @@
-/* Skybound site: the Neon Night look, kept simple so it reads on anything. */
+/* Thenpen site: the studio's navy, cream and coral, kept simple so it reads on anything. */
 :root {
   color-scheme: dark;
-  --bg-top: #100828;
-  --bg-bottom: #280c46;
-  --text: #e9e6f5;
-  --muted: #a89fc4;
-  --cyan: #00ecff;
-  --pink: #ff2ec4;
+  --bg-top: #182039;
+  --bg-bottom: #263454;
+  --panel: rgba(255, 255, 255, 0.05);
+  --line: rgba(240, 239, 224, 0.16);
+  --text: #f0efe0;
+  --muted: #b9bdcf;
+  --coral: #f08070;
+  --coral-deep: #e05040;
 }
 * { box-sizing: border-box; }
 body {
@@ -19,28 +21,27 @@ body {
 main {
   max-width: 680px;
   margin: 0 auto;
-  padding: 56px 24px 72px;
+  padding: 48px 24px 72px;
 }
 h1 {
   margin: 0;
-  font-size: 44px;
+  font-size: 40px;
   letter-spacing: 0.06em;
   text-align: center;
-  color: #fff;
-  text-shadow: 0 0 10px var(--cyan), 0 0 28px rgba(0, 236, 255, 0.55);
+  color: var(--coral);
 }
 .tagline {
-  margin: 4px 0 40px;
+  margin: 4px 0 36px;
   text-align: center;
   color: var(--muted);
 }
 .meta { color: var(--muted); font-size: 15px; }
 h2 {
-  margin: 36px 0 8px;
+  margin: 40px 0 10px;
   font-size: 22px;
-  color: var(--cyan);
+  color: var(--coral);
 }
-a { color: var(--pink); }
+a { color: var(--coral); }
 dt { font-weight: 600; margin-top: 16px; }
 dd { margin: 4px 0 0; color: var(--muted); }
 .footer {
@@ -50,8 +51,46 @@ dd { margin: 4px 0 0; color: var(--muted); }
   font-size: 15px;
 }
 
-/* Launch page additions. */
+/* Studio home. */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 36px;
+  font-size: 15px;
+}
+.nav a { color: var(--muted); text-decoration: none; }
+.nav a:hover, .nav a.current { color: var(--text); }
+.nav .brand { font-weight: 700; letter-spacing: 0.08em; color: var(--coral); }
 .hero { text-align: center; }
+.wordmark {
+  display: block;
+  width: min(420px, 80%);
+  height: auto;
+  margin: 24px auto 0;
+}
+.hero .tagline { margin-top: 0; }
+.card {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--panel);
+}
+.card .icon { width: 96px; height: 96px; margin: 0; }
+.card h3 { margin: 0 0 4px; font-size: 20px; }
+.card p { margin: 0 0 12px; color: var(--muted); }
+.card .links { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; }
+@media (max-width: 480px) {
+  .card { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+  .card .links { justify-content: center; }
+}
+
+/* Game page. */
 .icon {
   display: block;
   margin: 0 auto 14px;
@@ -63,13 +102,13 @@ dd { margin: 4px 0 0; color: var(--muted); }
   margin: 8px 0 10px;
   padding: 12px 26px;
   border-radius: 999px;
-  background: var(--cyan);
-  color: #08101e;
+  background: var(--coral);
+  color: #1a2038;
   font-weight: 700;
   text-decoration: none;
-  box-shadow: 0 0 18px rgba(0, 236, 255, 0.45);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
 }
-.store:hover { background: #fff; }
+.store:hover { background: var(--text); }
 .hero .meta { margin: 0; text-align: center; }
 .shots {
   display: flex;
@@ -99,15 +138,15 @@ dd { margin: 4px 0 0; color: var(--muted); }
   width: 100%;
   padding: 11px 13px;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--line);
+  background: rgba(0, 0, 0, 0.25);
   color: var(--text);
   font: inherit;
 }
 .support input:focus, .support textarea:focus {
   outline: none;
-  border-color: var(--cyan);
-  box-shadow: 0 0 0 3px rgba(0, 236, 255, 0.2);
+  border-color: var(--coral);
+  box-shadow: 0 0 0 3px rgba(240, 128, 112, 0.25);
 }
 .support textarea { resize: vertical; }
 .support button {
@@ -116,19 +155,19 @@ dd { margin: 4px 0 0; color: var(--muted); }
   padding: 12px 26px;
   border: 0;
   border-radius: 999px;
-  background: var(--cyan);
-  color: #08101e;
+  background: var(--coral);
+  color: #1a2038;
   font: inherit;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 0 18px rgba(0, 236, 255, 0.45);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
 }
-.support button:hover { background: #fff; }
+.support button:hover { background: var(--text); }
 .support button:disabled { opacity: 0.6; cursor: default; }
 .gotcha { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 .form-note { margin: 12px 0 0; padding: 12px 14px; border-radius: 12px; }
 .form-note:empty { display: none; }
-.form-note[data-fs-success] { display: none; background: rgba(0, 236, 255, 0.12); color: var(--cyan); }
-.form-note.error { background: rgba(255, 46, 196, 0.12); color: var(--pink); }
-.field-error { color: var(--pink); font-size: 14px; }
+.form-note[data-fs-success] { display: none; background: rgba(240, 128, 112, 0.14); color: var(--coral); }
+.form-note.error { background: rgba(224, 80, 64, 0.18); color: var(--coral); }
+.field-error { color: var(--coral); font-size: 14px; }
 .field-error:empty { display: none; }
